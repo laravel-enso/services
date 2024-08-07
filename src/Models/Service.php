@@ -19,10 +19,15 @@ class Service extends Model implements DynamicMethods
 
     protected $guarded = ['id'];
 
-    protected $casts = ['is_active' => 'boolean'];
-
     public function measurementUnit()
     {
         return $this->belongsTo(MeasurementUnit::class);
+    }
+
+    protected function casts(): array
+    {
+        return [
+            'is_active' => 'boolean',
+        ];
     }
 }
