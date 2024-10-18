@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('code')->unique();
 
-            $table->unsignedDecimal('list_price', 13, 4);
-            $table->unsignedTinyInteger('vat_percent');
+            $table->decimal('list_price', 13, 4)->unsigned();
+            $table->tinyInteger('vat_percent')->unsigned();
 
             $table->string('description')->nullable();
 
