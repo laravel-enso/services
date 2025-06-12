@@ -12,7 +12,7 @@ class Update extends Controller
     {
         $service->update($request->only(
             ['measurement_unit_id', 'name', 'code', 'list_price',
-             'vat_percent', 'description', 'is_active']
+                'vat_percent', 'description', 'is_active']
         ));
         $service->suppliers()->sync($request->get('suppliers'));
 
