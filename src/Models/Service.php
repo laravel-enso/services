@@ -22,7 +22,7 @@ class Service extends Model implements DynamicMethods
 
     public function measurementUnit()
     {
-        return $this->belongsToMan(MeasurementUnit::class);
+        return $this->belongsTo(MeasurementUnit::class);
     }
 
     public function suppliers()
