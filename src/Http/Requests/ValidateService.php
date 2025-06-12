@@ -23,6 +23,8 @@ class ValidateService extends FormRequest
             'vat_percent' => 'required|integer|min:0',
             'description' => 'nullable|string',
             'is_active' => 'boolean',
+            'suppliers' => 'array',
+            'suppliers.*' => 'exists:companies,id',
         ];
     }
 
