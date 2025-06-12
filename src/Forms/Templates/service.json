@@ -1,8 +1,10 @@
 {
     "routePrefix": "services",
+    "tabs" : true,
     "sections": [
         {
             "columns": 2,
+            "tab": "General",
             "fields": [
                 {
                     "label": "Name",
@@ -65,6 +67,7 @@
         },
         {
             "columns": 1,
+            "tab": "General",
             "fields": [
                 {
                     "label": "Description",
@@ -73,6 +76,23 @@
                     "meta": {
                         "type": "textarea",
                         "content": "text"
+                    }
+                }
+            ]
+        },
+        {
+            "tab": "Suppliers",
+            "columns": 1,
+            "fields": [
+                {
+                    "label": "Suppliers",
+                    "name": "suppliers",
+                    "value": [],
+                    "meta": {
+                        "custom": true,
+                        "type": "select",
+                        "multiple": true,
+                        "source": "administration.companies.options"
                     }
                 }
             ]
