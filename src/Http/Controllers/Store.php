@@ -10,8 +10,8 @@ class Store extends Controller
 {
     public function __invoke(ValidateService $request, Service $service)
     {
-        $service->fill($request->validated())
-            ->save();
+        $service->fill($request->safe()->except('suppliers'))->save();
+        $service->suppliers()->sync($request->get('suppliers'));
 
         return [
             'message' => __('The service was successfully created'),
