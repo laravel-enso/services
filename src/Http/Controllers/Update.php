@@ -11,7 +11,12 @@ class Update extends Controller
     public function __invoke(ValidateService $request, Service $service)
     {
         $service->update($request->safe()->except('suppliers'));
-        $service->suppliers()->sync($request->get('suppliers'));
+
+        if (count($request->get('suppliers')) === 0) {
+            $service->suppliers()->sync([]);
+        } else {
+            $service->syncSuppliers($request->get('suppliers'));
+        }
 
         return ['message' => __('The service was successfully updated')];
     }

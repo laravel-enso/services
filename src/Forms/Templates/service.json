@@ -1,6 +1,6 @@
 {
     "routePrefix": "services",
-    "tabs" : true,
+    "tabs": true,
     "sections": [
         {
             "columns": 2,
@@ -43,7 +43,13 @@
                         "type": "select",
                         "options": "LaravelEnso\\Helpers\\Enums\\VatRates"
                     }
-                },
+                }
+            ]
+        },
+        {
+            "columns": 4,
+            "tab": "General",
+            "fields": [
                 {
                     "label": "Measurement",
                     "name": "measurement_unit_id",
@@ -82,17 +88,18 @@
         },
         {
             "tab": "Suppliers",
-            "columns": 1,
+            "columns": "slot",
+            "slot": "suppliers",
             "fields": [
                 {
                     "label": "Suppliers",
                     "name": "suppliers",
                     "value": [],
                     "meta": {
-                        "custom": true,
+                        "objects": true,
                         "type": "select",
                         "multiple": true,
-                        "source": "administration.companies.options"
+                        "source": "products.suppliers"
                     }
                 }
             ]

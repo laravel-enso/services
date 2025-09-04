@@ -3,6 +3,7 @@
 namespace LaravelEnso\Services\Forms\Builders;
 
 use LaravelEnso\Forms\Services\Form;
+use LaravelEnso\Services\Http\Resources\Supplier;
 use LaravelEnso\Services\Models\Service as Model;
 
 class Service
@@ -23,7 +24,9 @@ class Service
 
     public function edit(Model $service)
     {
-        return $this->form->edit($service);
+        return $this->form
+            ->value('suppliers', Supplier::collection($service->suppliers))
+            ->edit($service);
     }
 
     protected function templatePath(): string

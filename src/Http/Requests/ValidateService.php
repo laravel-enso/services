@@ -24,7 +24,8 @@ class ValidateService extends FormRequest
             'description' => 'nullable|string',
             'is_active' => 'boolean',
             'suppliers' => 'array',
-            'suppliers.*' => 'exists:companies,id',
+            'suppliers.*.id' => 'numeric|exists:companies,id',
+            'suppliers.*.cost.acquisitionPrice' => 'required|numeric|min:0.01',
         ];
     }
 
