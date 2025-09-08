@@ -21,7 +21,7 @@ class ValidateService extends FormRequest
             'code' => ['required', 'string', $this->uniqueCode()],
             'list_price' => 'required|numeric|min:0.01',
             'vat_percent' => 'required|integer|min:0',
-            'description' => 'nullable|string',
+            'description' => 'nullable|string|max:255',
             'is_active' => 'boolean',
             'suppliers' => 'array',
             'suppliers.*.id' => 'numeric|exists:companies,id',
