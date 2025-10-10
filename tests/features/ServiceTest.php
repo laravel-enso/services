@@ -52,7 +52,7 @@ class ServiceTest extends TestCase
 
         $this->patch(
             route('services.update', $this->testModel->id, false),
-            $this->testModel->toArray()
+            [...$this->testModel->toArray(), 'suppliers' => []]
         )->assertStatus(200)
             ->assertJsonStructure(['message']);
 
