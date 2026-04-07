@@ -14,8 +14,9 @@ class Supplier extends JsonResource
     public function toArray($request)
     {
         $format = Config::get('enso.config.dateFormat');
-        $params = json_decode($request->get('customParams'), true);
-        $id = $params['product'] ?? $this->cost?->product_id;
+
+        $id = $request->get('customParams')['product']
+            ?? $this->cost?->product_id;
 
         $this->product = $id ? Product::find($id) : null;
 

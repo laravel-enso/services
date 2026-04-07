@@ -43,9 +43,7 @@
             "label": "VAT",
             "name": "vat_percent",
             "data": "services.vat_percent",
-            "number": {
-                "precision": 2
-            },
+            "number": {},
             "meta": [
                 "searchable",
                 "sortable"
