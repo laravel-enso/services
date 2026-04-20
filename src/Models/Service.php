@@ -16,8 +16,12 @@ use LaravelEnso\Tables\Traits\TableCache;
 
 class Service extends Model implements DynamicMethods
 {
-    use Abilities, ActiveState, AvoidsDeletionConflicts, HasFactory;
-    use TableCache, Rememberable;
+    use Abilities;
+    use ActiveState;
+    use AvoidsDeletionConflicts;
+    use HasFactory;
+    use TableCache;
+    use Rememberable;
 
     protected $guarded = ['id'];
 

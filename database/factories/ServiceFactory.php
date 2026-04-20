@@ -15,12 +15,12 @@ class ServiceFactory extends Factory
     {
         return [
             'measurement_unit_id' => fn () => MeasurementUnit::firstOrCreate(['name' => 'Piece'])->id,
-            'name' => $this->faker->name,
-            'code' => $this->faker->unique()->ean8,
-            'list_price' => $this->faker->numberBetween(1, 300),
-            'vat_percent' => VatRates::keys()->random(),
-            'description' => $this->faker->text,
-            'is_active' => true,
+            'name'                => $this->faker->name,
+            'code'                => $this->faker->unique()->ean8,
+            'list_price'          => $this->faker->numberBetween(1, 300),
+            'vat_percent'         => VatRates::keys()->random(),
+            'description'         => $this->faker->text,
+            'is_active'           => true,
         ];
     }
 }

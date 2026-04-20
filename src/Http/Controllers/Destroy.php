@@ -12,7 +12,7 @@ class Destroy extends Controller
         $service->delete();
 
         return [
-            'message' => __('The service was successfully deleted'),
+            'message'  => __('The service was successfully deleted'),
             'redirect' => 'services.index',
         ];
     }

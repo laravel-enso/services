@@ -21,12 +21,12 @@ class Supplier extends JsonResource
         $this->product = $id ? Product::find($id) : null;
 
         return [
-            'id' => $this->id,
+            'id'   => $this->id,
             'name' => $this->name,
             'cost' => [
                 'acquisitionPrice' => $this->acquisitionPrice(),
-                'createdAt' => $this->createdAt()->format($format),
-                'updatedAt' => $this->updatedAt()->format($format),
+                'createdAt'        => $this->createdAt()->format($format),
+                'updatedAt'        => $this->updatedAt()->format($format),
             ],
         ];
     }

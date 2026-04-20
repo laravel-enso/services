@@ -14,9 +14,9 @@ class Store extends Controller
         $service->suppliers()->sync($request->get('suppliers'));
 
         return [
-            'message' => __('The service was successfully created'),
+            'message'  => __('The service was successfully created'),
             'redirect' => 'services.edit',
-            'param' => ['service' => $service->id],
+            'param'    => ['service' => $service->id],
         ];
     }
 }

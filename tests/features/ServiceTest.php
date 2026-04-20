@@ -7,12 +7,16 @@ use LaravelEnso\Forms\TestTraits\EditForm;
 use LaravelEnso\Services\Models\Service;
 use LaravelEnso\Tables\Traits\Tests\Datatable;
 use LaravelEnso\Users\Models\User;
-use Tests\TestCase;
 use PHPUnit\Framework\Attributes\Test;
+use Tests\TestCase;
 
 class ServiceTest extends TestCase
 {
-    use Datatable, DestroyForm, EditForm, CreateForm, RefreshDatabase;
+    use Datatable;
+    use DestroyForm;
+    use EditForm;
+    use CreateForm;
+    use RefreshDatabase;
 
     private $permissionGroup = 'services';
     private $testModel;
@@ -42,7 +46,7 @@ class ServiceTest extends TestCase
             ->assertJsonStructure(['message'])
             ->assertJsonFragment([
                 'redirect' => 'services.edit',
-                'param' => ['service' => $service->id],
+                'param'    => ['service' => $service->id],
             ]);
     }
 
